@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="loguin"></div>
+  <div id="chat">
+<div id="messages"></div>
+<div id="image"></div>
+message: <input type="text" id="message-imput" name="" value="">
+<button type="button"id="send-message" name="button">Seend</button>
+
+
+
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAX4Ul_GOC5AVOAFw3XsyO5tsV5gOeFGdU",
+      authDomain: "fir-proyect-4c9c9.firebaseapp.com",
+      databaseURL: "https://fir-proyect-4c9c9.firebaseio.com",
+      projectId: "fir-proyect-4c9c9",
+      storageBucket: "fir-proyect-4c9c9.appspot.com",
+      messagingSenderId: "1020591082510"
+    };
+    firebase.initializeApp(config);
+    var user= "lolo@home.com"
+    document.getElementById('send-message').addEventListener("click",function () {
+      var newPostKey = firebase.database().ref().child('posts').push().key;
+      firebase.database().ref().push({
+
+  username:user,
+  message: document.getElementById('message-imput').value
+
+
+      })
+.then(res=>console.log(res));
+    });
+firebase.database().ref().on("value",function(snapshot){
+  console.log(snapshot.val());
+var msgDiv= document.getElementById("messages");
+var messages= snapshot.val();
+var appendStr = '';
+for(k in messages){
+  appendStr += `<h3>${messages[k].username}:${messages[k].message}</h3>`
+}
+msgDiv.innerHTML = appendStr;
+})
+  </script>
+</body>
+</html>

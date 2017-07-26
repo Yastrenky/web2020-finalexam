@@ -1,0 +1,115 @@
+#messages {
+  flex-direction: column;
+  display: flex;
+  margin-bottom: 64px;
+  margin-top: 120px;
+}
+
+.textright {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  padding: 1.5px;
+  margin-top: 10px;
+  margin-left: 25%;
+  margin-right: 67px;
+  text-align: left;
+  background-color: white;
+
+  em {
+    position: relative;
+    right: 31px;
+    top: -20px;
+    font-size: 13px;
+    width: 65px;
+    color: $color_font;
+  }
+
+  p {
+    text-align: end;
+    width: 100%;
+    margin-right: 10px;
+    word-wrap: break-word;
+    margin-right: 10px;
+  }
+}
+
+.textleft {
+  padding: 1.5px;
+  margin-top: 10px;
+  margin-left: 62px;
+  margin-right: 25%;
+  text-align: left;
+  /* align-items: flex-start; */
+  background-color: white;
+
+  em {
+    position: relative;
+    right: 31px;
+    top: -100px;
+    font-size: 13px;
+    width: 65px;
+    color: $color_font;
+  }
+
+  p {
+    margin-right: 10px;
+    margin-left: 10px;
+    word-wrap: break-word;
+  }
+}
+
+.textTOsend {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 52px;
+  background-color: rgba(0, 151, 242, 0.39);
+}
+
+#message-imput {
+  display: flex;
+  flex: 10;
+  background-color: black;
+  border: none;
+  color: white;
+  margin: 0;
+  padding-left: 10px;
+}
+
+#send-message {
+  border-width: 10px;
+  display: flex;
+  font-size: 30px;
+  padding-left: 19px;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 16px;
+  right: 10px;
+  border-radius: 60px;
+  background-color: rgb(254, 189, 183);
+  border-width: 3px;
+  text-align: center;
+  border-color: black;
+}
+
+.image_profile {
+  border-color: black;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.51);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+#imageprofileright {
+  position: absolute;
+  right: 10px;
+}
+
+#imageprofileleft {
+  position: relative;
+  right: 50px;
+  top: -45px;
+}
